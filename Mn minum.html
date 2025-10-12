@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedai Mora — Menu Minuman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top right, #1a1a1a, #0d0d0d 60%);
+      color: #f5f5f5;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header a {
+      color: #E0B76F;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      color: #ffce73;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      color: #E0B76F;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: #f8f8f8;
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, #E0B76F, #C4913C);
+      margin: 0.7rem auto 0;
+      border-radius: 2px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transform: translateY(0);
+      transition: all 0.4s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(255, 204, 102, 0.2);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-info {
+      padding: 1.5rem;
+    }
+
+    .menu-info h3 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .menu-info p {
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .price {
+      color: #E0B76F;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .order-btn {
+      background: linear-gradient(90deg, #E0B76F, #C4913C);
+      color: #000;
+      text-align: center;
+      padding: 12px 0;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+      display: block;
+    }
+
+    .order-btn:hover {
+      filter: brightness(1.1);
+      transform: scale(1.04);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 1rem 1.5rem; }
+      h1 { font-size: 1.9rem; }
+      .menu-card img { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="MORA.html">← Kembali</a>
+    <div class="title">Kedai Mora</div>
+  </header>
+
+  <main>
+    <h1>Menu Minuman</h1>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <img src="Milo.png" alt="Milo">
+        <div class="menu-info">
+          <h3>Milo Dingin</h3>
+          <p>Minuman cokelat klasik dengan rasa manis lembut, disajikan untuk energi maksimal.</p>
+          <div class="price">Rp 5.000</div>
+          <a href="https://wa.me/6285641708485?text=Halo Kedai Mora, saya ingin pesan Milo dingin/hangat" class="order-btn" target="_blank">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="Teh.png" alt="Teh">
+        <div class="menu-info">
+          <h3>Teh Hangat</h3>
+          <p>Teh hitam harum diseduh sempurna, cocok untuk menemani setiap waktu santai Anda tersedia panas,es,dan tawar.</p>
+          <div class="price">Rp 5.000</div>
+          <a href="https://wa.me/6285641708485?text=Halo Kedai Mora, saya ingin pesan Teh" class="order-btn" target="_blank">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="Jeruk.png" alt="Jeruk Segar">
+        <div class="menu-info">
+          <h3>Jeruk Segar</h3>
+          <p>Perasan jeruk asli yang kaya vitamin C, memberikan kesegaran alami setiap tegukan.</p>
+          <div class="price">Rp 5.000</div>
+          <a href="https://wa.me/6285641708485?text=Halo Kedai Mora, saya ingin pesan Jeruk Segar" class="order-btn" target="_blank">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="Chocolatos.png" alt="Chocolatos Nikmat">
+        <div class="menu-info">
+          <h3>Chocolatos Nikmat</h3>
+          <p>Perpaduan rasa cokelat lembut dan creamy yang nikmat, cocok dinikmati dingin ataupun hangat.</p>
+          <div class="price">Rp 5.000</div>
+          <a href="https://wa.me/6285641708485?text=Halo Kedai Mora, saya ingin pesan Chocolatos Nikmat" class="order-btn" target="_blank">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="Bengbeng.png" alt="Beng-beng Drink">
+        <div class="menu-info">
+          <h3>Beng-beng Drink</h3>
+          <p>Minuman dengan rasa karamel dan cokelat khas Beng-beng yang creamy dan menggugah selera.</p>
+          <div class="price">Rp 5.000</div>
+          <a href="https://wa.me/6285641708485?text=Halo Kedai Mora, saya ingin pesan Beng-beng Drink" class="order-btn" target="_blank">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="Jahe.png" alt="Wedang Jahe">
+        <div class="menu-info">
+          <h3>Wedang Jahe</h3>
+          <p>Minuman hangat tradisional dengan aroma jahe yang menenangkan dan menambah stamina tubuh.</p>
+          <div class="price">Rp 5.000</div>
+          <a href="https://wa.me/6285641708485?text=Halo Kedai Mora, saya ingin pesan Wedang Jahe" class="order-btn" target="_blank">Pesan Sekarang</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    TERIMA KASIH
+  </footer>
+</body>
+</html>
